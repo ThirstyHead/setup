@@ -3,7 +3,7 @@ These are notes for setting up a new computer.
 
 ## Browsers
 Install
-* Google Chrome
+* Google Chrome (https://www.google.com/chrome)
 * Firefox
 * Opera
 
