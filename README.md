@@ -1,24 +1,24 @@
 # Setup
 These are notes for setting up a new computer. 
 
-== Browsers
+## Browsers
 Install
 * Google Chrome
 * Firefox
 * Opera
 
 
-== GitHub
+## GitHub
 * Set up SSH key
 * Add ssh key to GitHub account
 
 
-== System Setup
+## System Setup
 * Add touchid to /etc/pam.d/sudo
 * Map capslock to esc in System Prefs/keyboard
 
 
-== Brew
+## Brew
 * Install brew
 * brew install git
 * brew install git-flow-avh
@@ -26,6 +26,6 @@ Install
 * brew install graphicsmagick
 * brew cask install rectangle
 
-== Node
+## Node
 * Install NVM
 
