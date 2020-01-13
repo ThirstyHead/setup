@@ -1,0 +1,23 @@
+[user]
+  name  = Scott Davis
+  email = scott@thirstyhead.com
+
+[alias]
+  b  = branch
+  c  = commit
+  cm = commit -m 
+  co = checkout
+  s  = status
+
+[core]
+  excludesfile = /home/scott/.gitexcludes
+  autocrlf = input
+
+[branch]
+  autosetupmerge = true
+
+[push]
+  default = current
+
+[color]
+  ui = auto

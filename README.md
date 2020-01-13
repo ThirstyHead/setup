@@ -9,6 +9,8 @@ Install
 
 
 ## GitHub
+* copy `dot.gitconfig` to `~/.gitconfig`
+* copy `dot.gitexcludes` to `~/.gitexcludes`
 * Set up SSH key (https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 * Add ssh key to GitHub account (https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 
@@ -29,3 +31,15 @@ Install
 ## Node
 * Install NVM (https://github.com/nvm-sh/nvm)
 
+
+## NeoVIM
+* brew install neovim
+* set up aliases in .zshrc
+```
+alias  vi=nvim
+alias vim=nvim
+export EDITOR=nvim
+```
+* copy `dot.config-nvim-init.vim` to `~/.config/nvim/init.vim`
+
+* copy `dot.vim-vimrc` to `~/.vim/vimrc`
