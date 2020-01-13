@@ -1,0 +1,98 @@
+set packpath^=~/.vim
+packadd minpac
+
+call minpac#init()
+
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" Add other plugins here.
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('junegunn/fzf')
+call minpac#add('alvan/vim-closetag')
+call minpac#add('sirver/ultisnips')
+nnoremap <C-p> :<C-u>FZF<CR>
+
+" Load the plugins right now. (optional)
+"packloadall
+
+" netrw tree customizations
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
+" terminal
+tnoremap <Esc> <C-\><C-n>
+
+" json
+nmap =j :%!python -m json.tool<CR>
+
+" ==============
+" customization
+" ==============
+set autoindent
+" set hidden
+syntax on
+set shiftwidth=2
+let &softtabstop = &shiftwidth
+set expandtab
+hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
+
+colo desert
+
+
+" set wordwrap
+set wrap linebreak nolist
+
+" ctrl+a to select all
+map <C-a> <esc>ggVG<CR>
+" ctrl+c to copy selected text in visual mode to system clipboard
+vnoremap <C-c> :w !pbcopy<CR><CR>
+
+" spelling
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=red
+
+
+" ===========================
+" vim-closetag customization
+" ===========================
+inoremap jj <
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+let g:closetag_emptyTags_caseSensitive = 1
+
+" Shortcut for closing tags, default is '>'
+let g:closetag_shortcut = ';;'
+
+" Add > at current position without closing the current tag, default is ''
+let g:closetag_close_shortcut = '<leader>>'
+
+
+" ===========================
+" ultisnips customization
+" ===========================
+set runtimepath+=~/.vim/pack/minpac/start/ultisnips/
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/snips']
