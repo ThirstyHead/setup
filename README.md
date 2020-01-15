@@ -17,7 +17,7 @@ Install
 
 ## System Setup
 * Add touchid to /etc/pam.d/sudo (https://www.imore.com/how-use-sudo-your-mac-touch-id)
-* Map capslock to esc in System Prefs/keyboard (https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_macOS)
+* Map capslock to ctrl in System Prefs/keyboard (https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_macOS)
 
 
 ## Homebrew
@@ -28,8 +28,23 @@ Install
 * brew install graphicsmagick
 * brew cask install rectangle
 
+
 ## Node
 * Install NVM (https://github.com/nvm-sh/nvm)
+
+
+## Python
+* brew install pyenv
+* pyenv install 3.8.1
+* pyenv global 3.8.1
+* enable pyenv in .zshrc
+```
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+```
+* pip install -U pip
+* python3 -m pip install --user --upgrade pynvim
 
 
 ## NeoVIM
@@ -41,5 +56,10 @@ alias vim=nvim
 export EDITOR=nvim
 ```
 * copy `dot.config-nvim-init.vim` to `~/.config/nvim/init.vim`
-
+* unzip `dot.vim.tar` to `~/.vim`
 * copy `dot.vim-vimrc` to `~/.vim/vimrc`
+* vi
+* :checkhealth
+
+
+

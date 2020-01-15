@@ -38,15 +38,9 @@ nmap =j :%!python -m json.tool<CR>
 " ==============
 set autoindent
 " set hidden
-syntax on
 set shiftwidth=2
 let &softtabstop = &shiftwidth
 set expandtab
-hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
-
-colo desert
-
-
 " set wordwrap
 set wrap linebreak nolist
 
@@ -58,6 +52,44 @@ vnoremap <C-c> :w !pbcopy<CR><CR>
 " spelling
 hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=red
+
+
+" ==============
+" colors
+" :runtime syntax/colortest.vim
+" :syn off | on
+" ==============
+syntax on
+"colo atom-dark-256
+"hi htmlString ctermfg=114
+"hi javaScriptStringS ctermfg=114
+"hi javaScriptStringD ctermfg=114
+"hi javaScriptStringT ctermfg=114
+"hi javaScriptLabel ctermfg=114
+
+colo github-custom
+
+"hi Normal ctermbg=white
+"hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
+
+" place your cursor on the item you want to inspect
+" and type :call SynStack() 
+" It will return the syntax group that matches the item for styling
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+" :call SynColor()
+function! SynColor()
+  if !exists("*synstack")
+    return
+  endif
+  echo synIDattr(synIDtrans(synID(line("."), col("."), 1)), "fg")
+endfunc
+
 
 
 " ===========================
