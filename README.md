@@ -31,7 +31,7 @@ Install
 
 ## Node
 * Install NVM (https://github.com/nvm-sh/nvm)
-
+* Set global defaults for `npm init` -- see script in `\npm` (https://codeburst.io/setting-global-npm-defaults-for-quick-starting-new-projects-ed06ed22edb3)
 
 ## Python
 * brew install pyenv
