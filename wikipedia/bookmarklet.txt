@@ -1,1 +1,1 @@
-javascript: document.getElementById('content').style.width = '95%';let elem=document.getElementById('mw-navigation'); elem.parentNode.removeChild(elem);
+javascript:(function(){document.getElementById('content').style.width='95%'; let elem=document.getElementById('mw-navigation'); elem.parentNode.removeChild(elem);} )();

@@ -27,7 +27,7 @@ Install
 * brew install caddy
 * brew install graphicsmagick
 * brew cask install rectangle
-
+* brew install tokei
 
 ## Node
 * Install NVM (https://github.com/nvm-sh/nvm)
