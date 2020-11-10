@@ -18,6 +18,7 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('junegunn/fzf')
 call minpac#add('alvan/vim-closetag')
 call minpac#add('sirver/ultisnips')
+call minpac#add('tomtom/tcomment_vim')
 nnoremap <C-p> :<C-u>FZF<CR>
 
 " Load the plugins right now. (optional)

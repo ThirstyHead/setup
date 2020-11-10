@@ -553,6 +553,7 @@ endif
 " 17  dark purple
 " 26  Blue
 " 29  Green
+" 91  bright purple
 " 166 Orange
 " 235 Black
 
@@ -565,7 +566,12 @@ hi htmlH3 ctermfg=17
 hi htmlH4 ctermfg=17
 hi htmlH5 ctermfg=17
 hi htmlLink ctermfg=17
+hi htmlTitle ctermfg=17
+
+hi htmlTagN ctermfg=91
+
 hi htmlArg ctermfg=26
+
 hi htmlSpecialTagName ctermfg=29
 
 "=========
