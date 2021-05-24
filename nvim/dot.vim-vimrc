@@ -92,6 +92,46 @@ function! SynColor()
 endfunc
 
 
+" https://vim.fandom.com/wiki/HTML_entities
+" Escape/unescape & < > HTML entities in range (default current line).
+function! HtmlEntities(line1, line2, action)
+  let search = @/
+  let range = 'silent ' . a:line1 . ',' . a:line2
+  if a:action == 0  " must convert &amp; last
+    execute range . 'sno/&lt;/</eg'
+    execute range . 'sno/&gt;/>/eg'
+    execute range . 'sno/&amp;/&/eg'
+  else              " must convert & first
+    execute range . 'sno/&/&amp;/eg'
+    execute range . 'sno/</&lt;/eg'
+    execute range . 'sno/>/&gt;/eg'
+  endif
+  nohl
+  let @/ = search
+endfunction
+command! -range -nargs=1 Entities call HtmlEntities(<line1>, <line2>, <args>)
+noremap <silent> <Leader>H :Entities 0<CR>
+noremap <silent> <Leader>h :Entities 1<CR>
+
+" https://vim.fandom.com/wiki/Wrap_a_visual_selection_in_an_HTML_tag
+" Wrap visual selection in an HTML tag.
+vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
+function! VisualHTMLTagWrap()
+  let tag = input("Tag to wrap block: ")
+  if len(tag) > 0
+    normal `>
+    if &selection == 'exclusive'
+      exe "normal i</".tag.">"
+    else
+      exe "normal a</".tag.">"
+    endif
+    normal `<
+    exe "normal i<".tag.">"
+    normal `<
+  endif
+endfunction
+
+
 
 " ===========================
 " vim-closetag customization
